@@ -59,7 +59,7 @@ Set up secrets at `https://github.com/<workspace>/<project>/settings/secrets/act
 8. EKS_CLUSTER_NAME - Amazon EKS Kubernetes cluster name.
 9. EKS_CLUSTER_NAMESPACE - Amazon EKS Kubernetes cluster namespace.
 10. HELM_REPO_URL - `https://<workspace>.github.io/<project>/charts-repo/`
-11. PYPI_TOKEN - The secret token for PyPI at `https://github.com/<workspace>/<project>/settings/secrets/actions`. https://pypi.org/help/#apitoken
+11. PYPI_TOKEN - The secret token for PyPI. https://pypi.org/help/#apitoken
 
 **After execution**  
 The index.yaml file containing the list of Helm charts will be available at `https://<workspace>.github.io/<project>/charts-repo/index.yaml`. You can this URL on https://artifacthub.io/.  
