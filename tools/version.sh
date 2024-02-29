@@ -6,10 +6,10 @@ set -o nounset
 ROOT="${GITHUB_WORKSPACE}"
 CHART_NAME="server"
 
-VERSION_APP_PATH="${ROOT}/VERSION"
-VERSION_CHART_PATH="${ROOT}/VERSION_CHART"
-VERSION_DOCKER_PATH="${ROOT}/VERSION_DOCKER"
-DOCKER_IMAGES_PATH="${ROOT}/DOCKER_IMAGES"
+VERSION_APP_PATH="./VERSION_APP"
+VERSION_CHART_PATH="./VERSION_CHART"
+VERSION_DOCKER_PATH="./VERSION_DOCKER"
+DOCKER_IMAGES_PATH="./DOCKER_IMAGES"
 
 #                                         App                           Docker                            Chart
 # branch, pr (e.g. "main", "mybranch"):   4.2.0.dev3-mybranch-411fa4aa  4.2.0-dev.3.mybranch.411fa4aa     4.2.0-dev.3.mybranch.411fa4aa
@@ -19,8 +19,8 @@ make_version() {
   GIT_SHA=$(git log -1 --pretty=%H)
   SHORT_SHA=$(echo "$GIT_SHA" | cut -c1-8)
 
-  VERSION_BASE_HASH=$(git log --follow -1 --pretty=%H "$ROOT/VERSION")
-  VERSION_BASE=$(cat "$ROOT/VERSION")
+  VERSION_BASE_HASH=$(git log --follow -1 --pretty=%H VERSION)
+  VERSION_BASE=$(cat VERSION)
   GIT_COUNT=$(git rev-list --count "$VERSION_BASE_HASH"..HEAD)
 
   BRANCH=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}  # Branch or pr or tag
@@ -30,6 +30,7 @@ make_version() {
   echo "SHORT_SHA: $SHORT_SHA"
   echo "BRANCH: $BRANCH"
   echo "TAG: $TAG"
+  echo "VERSION_BASE_HASH: $VERSION_BASE_HASH"
   echo "VERSION_BASE: $VERSION_BASE"
   echo "GIT_COUNT: $GIT_COUNT"
 
@@ -83,7 +84,7 @@ make_docker_images_with_tags() {
 patch_helm_chart() {
   DOCKER_IMAGE_NAME="$1"
 
-  CHART_PATH="${ROOT}/server/charts/${CHART_NAME}"
+  CHART_PATH="./server/charts/${CHART_NAME}"
 
   DOCKER_IMAGE_TAG=$(rev "${VERSION_DOCKER_PATH}" | cut -d ',' -f 1 | rev)
   VERSION_CHART=$(cat "${VERSION_CHART_PATH}")
@@ -96,6 +97,8 @@ patch_helm_chart() {
 
 main() {
   DOCKER_IMAGE_NAME="$1"
+
+  cd "$ROOT"
 
   make_version
   make_docker_images_with_tags "$DOCKER_IMAGE_NAME"

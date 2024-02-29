@@ -86,7 +86,7 @@ jobs:
           cd "${{ github.workspace }}"
           chmod +x ./tools/version.sh
           ./tools/version.sh "${{ secrets.DOCKER_IMAGE_NAME }}"
-          echo "APP_VERSION=$(cat "./VERSION")" >> $GITHUB_ENV
+          echo "VERSION_APP=$(cat "./VERSION_APP")" >> $GITHUB_ENV
           echo "DOCKER_IMAGES=$(cat "./DOCKER_IMAGES")" >> $GITHUB_ENV
 
       - name: Login to Docker Hub
@@ -108,7 +108,7 @@ jobs:
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
       - name: Create a github release
-        run: gh release create "${{ env.APP_VERSION }}"
+        run: gh release create "${{ env.VERSION_APP }}"
         env:
           GH_TOKEN: ${{ github.token }}
 
