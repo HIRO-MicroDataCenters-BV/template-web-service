@@ -23,10 +23,12 @@ pre-commit install
 ```
 
 ## Working on a server
-Create a virtual environment in the ./server and install dependencies as specified in the [server documentation](./server/README.md).
+Go to the `/server` folder to install dependencies and work on the server application.  
+Documentation on setting up the virtual environment, installing dependencies, and working with the server can be found [here](./server/README.md).
 
 ## Working on a client
-Create a virtual environment in the ./client and install dependencies as specified in the [client documentation](./client/README.md).
+Go to the `/client` folder to install dependencies and work on the client application.  
+Documentation on setting up the virtual environment, installing dependencies, and working with the client can be found [here](./client/README.md).
 
 ## Release
 The application version is specified in the VERSION file. The version should follow the format a.a.a, where 'a' is a number.  

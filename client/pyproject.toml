@@ -11,7 +11,6 @@ license = "MIT"
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Template web service"]
 include = ["template_web_client/py.typed"]
-packages = [{include = "*", from="template_web_client"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
