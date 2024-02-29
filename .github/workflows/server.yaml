@@ -85,7 +85,7 @@ jobs:
         run: |
           cd "${{ github.workspace }}"
           chmod +x ./tools/version.sh
-          ./tools/version.sh "${{ github.sha }}" "${{ secrets.DOCKER_IMAGE_NAME }}"
+          ./tools/version.sh "${{ secrets.DOCKER_IMAGE_NAME }}"
           echo "APP_VERSION=$(cat "./VERSION")" >> $GITHUB_ENV
           echo "DOCKER_IMAGES=$(cat "./DOCKER_IMAGES")" >> $GITHUB_ENV
 

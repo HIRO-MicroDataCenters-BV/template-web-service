@@ -16,12 +16,12 @@ DOCKER_IMAGES_PATH="${ROOT}/DOCKER_IMAGES"
 # tag (free text, e.g. "mytag"):          4.2.0.dev3-mytag-411fa4aa     4.2.0-dev.3.mytag.411fa4aa        4.2.0-dev.3.mytag.411fa4aa
 # tag (release, e.g. "4.2.0"):            4.2.0                         4.2.0,4.2.0-411fa4aa              4.2.0
 make_version() {
-  GIT_SHA="$1"
+  GIT_SHA=$(git log -1 --pretty=%H)
   SHORT_SHA=$(echo "$GIT_SHA" | cut -c1-8)
 
   VERSION_BASE_HASH=$(git log --follow -1 --pretty=%H "$ROOT/VERSION")
   VERSION_BASE=$(cat "$ROOT/VERSION")
-  GIT_COUNT=$(git rev-list --count "$VERSION_BASE_HASH".."$GIT_SHA")
+  GIT_COUNT=$(git rev-list --count "$VERSION_BASE_HASH"..HEAD)
 
   BRANCH=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}  # Branch or pr or tag
   TAG=$( [[ $GITHUB_REF == refs/tags/* ]] && echo "${GITHUB_REF##refs/tags/}" || echo "" )
@@ -95,10 +95,9 @@ patch_helm_chart() {
 }
 
 main() {
-  GIT_SHA="$1"
-  DOCKER_IMAGE_NAME="$2"
+  DOCKER_IMAGE_NAME="$1"
 
-  make_version "$GIT_SHA"
+  make_version
   make_docker_images_with_tags "$DOCKER_IMAGE_NAME"
   patch_helm_chart "$DOCKER_IMAGE_NAME"
 }
