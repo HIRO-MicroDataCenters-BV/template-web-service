@@ -12,6 +12,16 @@ entries:
     - https://HIRO-MicroDataCenters-BV.github.io/template-web-service/charts-repo/server-0.1.0.tgz
     version: 0.1.0
   - apiVersion: v2
+    appVersion: 0.1.0-dev.2.feature-add-prom.866aeb74
+    created: "2024-02-29T13:59:13.649760388Z"
+    description: Web server
+    digest: ba83a8467110ecffe0aff42c3a06922db84f3c58aa8253a71962d129eba47271
+    name: server
+    type: application
+    urls:
+    - https://HIRO-MicroDataCenters-BV.github.io/template-web-service/charts-repo/server-0.1.0-dev.2.feature-add-prom.866aeb74.tgz
+    version: 0.1.0-dev.2.feature-add-prom.866aeb74
+  - apiVersion: v2
     appVersion: 0.1.0-dev.1.feature-add-prom.a079e944
     created: "2024-02-29T13:53:48.549787634Z"
     description: Web server
@@ -31,4 +41,4 @@ entries:
     urls:
     - https://HIRO-MicroDataCenters-BV.github.io/template-web-service/charts-repo/server-0.1.0-dev.0.main.68fb5abb.tgz
     version: 0.1.0-dev.0.main.68fb5abb
-generated: "2024-02-29T13:53:48.549271013Z"
+generated: "2024-02-29T13:59:13.648647782Z"
