@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  server:
+  - apiVersion: v2
+    appVersion: 0.1.0-dev.0.main.68fb5abb
+    created: "2024-02-29T10:21:33.882244693Z"
+    description: Web server
+    digest: 0f4acdb11a8f985f563bc9bdfcb3a5278331f3a2b77b49b912731ecd012f5122
+    name: server
+    type: application
+    urls:
+    - https://HIRO-MicroDataCenters-BV.github.io/template-web-service/charts-repo/server-0.1.0-dev.0.main.68fb5abb.tgz
+    version: 0.1.0-dev.0.main.68fb5abb
+generated: "2024-02-29T10:21:33.881799503Z"
