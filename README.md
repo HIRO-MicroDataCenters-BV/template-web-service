@@ -14,7 +14,7 @@ Upon pushing the commit to GitHub, workflows are initiated, which:
 Work on the server and client is conducted in their respective directories: server and client, as the server-side and client-side parts have different dependencies, configurations, etc.
 
 ## Requirements
-Python 3.8+
+Python 3.10+
 
 ## Installation
 ```bash

@@ -3,7 +3,7 @@ API version: 0.1.0
 
 ## Requirements
 
-- Python 3.8+
+- Python 3.10+
 - Docker engine. [Documentation](https://docs.docker.com/engine/install/)
 
 ## Installation & Usage

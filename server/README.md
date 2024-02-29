@@ -1,8 +1,11 @@
 # Server application
 
+## Requirements
+Python 3.10+
+
 ## Installation
 <details>
-<summary>Install Python 3.12 if it is not available in your package manager</summary>
+<summary>Install Python (3.12) if it is not available in your package manager</summary>
 
 These instructions are for Ubuntu 22.04. If you're on a different distribution,
 or - God forbid! - Windows, you should adjust these accordingly.

@@ -13,7 +13,7 @@ keywords = ["OpenAPI", "OpenAPI-Generator", "Template web service"]
 include = ["template_web_client/py.typed"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 
 urllib3 = ">= 1.25.3"
 python-dateutil = ">=2.8.2"
