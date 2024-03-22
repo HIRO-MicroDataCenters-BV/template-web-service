@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  server:
+  - apiVersion: v2
+    appVersion: 0.1.0-dev.3.feature-github-d.f40b5358
+    created: "2024-03-22T14:38:37.834389039Z"
+    description: Web server
+    digest: 7a9b04c4d0e0d38ec5500423dc9bc8d5481ef7fce6e9a23ed453d7563f68b42c
+    name: server
+    type: application
+    urls:
+    - https://HIRO-MicroDataCenters-BV.github.io/template-web-service/helm-charts/server-0.1.0-dev.3.feature-github-d.f40b5358.tgz
+    version: 0.1.0-dev.3.feature-github-d.f40b5358
+generated: "2024-03-22T14:38:37.833620769Z"
